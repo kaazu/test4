@@ -304,16 +304,15 @@
     paddle.x = Math.max(0, Math.min(WIDTH - paddle.w, x - paddle.w / 2));
   });
 
-  canvas.addEventListener(
-    "touchmove",
-    (e) => {
-      if (!running || paused) return;
-      e.preventDefault();
-      const x = pointerToPaddleX(e.touches[0].clientX);
-      paddle.x = Math.max(0, Math.min(WIDTH - paddle.w, x - paddle.w / 2));
-    },
-    { passive: false }
-  );
+  function handleTouch(e) {
+    if (!running || paused) return;
+    e.preventDefault();
+    const x = pointerToPaddleX(e.touches[0].clientX);
+    paddle.x = Math.max(0, Math.min(WIDTH - paddle.w, x - paddle.w / 2));
+  }
+
+  canvas.addEventListener("touchstart", handleTouch, { passive: false });
+  canvas.addEventListener("touchmove", handleTouch, { passive: false });
 
   startBtn.addEventListener("click", startGame);
 
