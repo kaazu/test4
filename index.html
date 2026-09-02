@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ブロック崩し</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="game-wrap">
+    <header class="hud">
+      <div class="hud-item">SCORE: <span id="score">0</span></div>
+      <div class="hud-item">LEVEL: <span id="level">1</span></div>
+      <div class="hud-item">LIVES: <span id="lives">3</span></div>
+    </header>
+
+    <div class="canvas-wrap">
+      <canvas id="game" width="480" height="640"></canvas>
+
+      <div id="overlay" class="overlay">
+        <h1 id="overlay-title">ブロック崩し</h1>
+        <p id="overlay-text">矢印キー / A・D / マウス / タッチでパドルを操作しよう</p>
+        <button id="start-btn">スタート</button>
+      </div>
+    </div>
+
+    <p class="hint">Space: 一時停止&nbsp;&nbsp;/&nbsp;&nbsp;←→ or A/D: 移動</p>
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>
